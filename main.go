@@ -8,13 +8,13 @@ func main() {
 
 	director := newDirector(vegBuilder)
 	veggie := director.buildBurger("Mixed Veg", 4)
-
-	fmt.Printf("Veg burger patty: %s\n", veggie.patty)
-	fmt.Printf("Veg burger tomato: %d\n", veggie.tomato)
+	fmt.Println(vegBuilder.String())
 
 	director.setBuilder(meatBuilder)
-	meat := director.buildBurger("Chicken", 2)
+	meat := director.buildBurger("Mutton", 2)
+	fmt.Println(meatBuilder.String())
 
-	fmt.Printf("\nNon Veg burger patty: %s\n", meat.patty)
-	fmt.Printf("Non Veg burger tomato: %d\n", meat.tomato)
+	fmt.Println("\n---------------------")
+	fmt.Println(veggie)
+	fmt.Println(meat)
 }

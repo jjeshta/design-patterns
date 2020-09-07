@@ -12,7 +12,7 @@ func newMeatBuilder() *meatBuilder {
 }
 
 func (b meatBuilder) String() string {
-	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+	return fmt.Sprintf("Your meat burger is Ready with the following options.\n Patty: %v, Tomato: %d", b.patty, b.tomato)
 }
 
 func (b *meatBuilder) setPatty(p string) {
