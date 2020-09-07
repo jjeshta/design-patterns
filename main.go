@@ -1,23 +1,17 @@
 package main
 
-import (
-	"fmt"
-	"patterns/singleton"
-)
+import "fmt"
 
 func main() {
-	//First creation
-	stateManager := singleton.GetManager()
-	if stateManager.GetState() == "off" {
-		stateManager.SetState("on")
-	}
-	fmt.Println(stateManager)
+	toyota, _ := getVehicle("car")
+	ship, _ := getVehicle("ship")
+	printDetails(toyota)
+	printDetails(ship)
+}
 
-	//second creation
-	stateManager1 := singleton.GetManager()
-	if stateManager1.GetState() == "on" {
-		stateManager1.SetState("off")
-	}
-	fmt.Println(stateManager1)
-
+func printDetails(v iVehicle) {
+	fmt.Printf("Vehicle: %s - %s", v.getMake(), v.getModel())
+	fmt.Println()
+	fmt.Printf("Type: %s", v.getType())
+	fmt.Println()
 }
