@@ -1,23 +1,27 @@
 package main
 
-import (
-	"fmt"
-	"patterns/singleton"
-)
+import "fmt"
 
 func main() {
-	//First creation
-	stateManager := singleton.GetManager()
-	if stateManager.GetState() == "off" {
-		stateManager.SetState("on")
-	}
-	fmt.Println(stateManager)
+	vegBuilder := getBuilder("veg")
+	// meatfmt.Println(string(jsonMsg.Body))
+	// Builder := getBuilder("non-veg")
 
-	//second creation
-	stateManager1 := singleton.GetManager()
-	if stateManager1.GetState() == "on" {
-		stateManager1.SetState("off")
-	}
-	fmt.Println(stateManager1)
+	// veg := vegBuilder{}
+	assembly := &assemble{}
+	x := assembly.assembleBurger(vegBuilder)
 
+	fmt.Println(x)
+
+	// director := newDirector()
+	// veggie := director.buildBurger()
+
+	// fmt.Printf("Veg burger patty: %s\n", veggie.patty)
+	// fmt.Printf("Veg burger tomato: %d\n", veggie.tomato)
+
+	// director.setBuilder(meatBuilder)
+	// meat := director.buildBurger()
+
+	// fmt.Printf("\nNon Veg burger patty: %s\n", meat.patty)
+	// fmt.Printf("Non Veg burger tomato: %d\n", meat.tomato)
 }
