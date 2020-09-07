@@ -4,24 +4,17 @@ import "fmt"
 
 func main() {
 	vegBuilder := getBuilder("veg")
-	// meatfmt.Println(string(jsonMsg.Body))
-	// Builder := getBuilder("non-veg")
+	meatBuilder := getBuilder("non-veg")
 
-	// veg := vegBuilder{}
-	assembly := &assemble{}
-	x := assembly.assembleBurger(vegBuilder)
+	director := newDirector(vegBuilder)
+	veggie := director.buildBurger()
 
-	fmt.Println(x)
+	fmt.Printf("Veg burger patty: %s\n", veggie.patty)
+	fmt.Printf("Veg burger tomato: %d\n", veggie.tomato)
 
-	// director := newDirector(vegBuilder)
-	// veggie := director.buildBurger()
+	director.setBuilder(meatBuilder)
+	meat := director.buildBurger()
 
-	// fmt.Printf("Veg burger patty: %s\n", veggie.patty)
-	// fmt.Printf("Veg burger tomato: %d\n", veggie.tomato)
-
-	// director.setBuilder(meatBuilder)
-	// meat := director.buildBurger()
-
-	// fmt.Printf("\nNon Veg burger patty: %s\n", meat.patty)
-	// fmt.Printf("Non Veg burger tomato: %d\n", meat.tomato)
+	fmt.Printf("\nNon Veg burger patty: %s\n", meat.patty)
+	fmt.Printf("Non Veg burger tomato: %d\n", meat.tomato)
 }
