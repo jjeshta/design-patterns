@@ -9,12 +9,12 @@ func newVegBuilder() *vegBuilder {
 	return &vegBuilder{}
 }
 
-func (b *vegBuilder) setPatty() {
-	b.patty = "Mixed Veg"
+func (b *vegBuilder) setPatty(p string) {
+	b.patty = p
 }
 
-func (b *vegBuilder) setTomato() {
-	b.tomato = 2
+func (b *vegBuilder) setTomato(t int) {
+	b.tomato = t
 }
 
 func (b *vegBuilder) getBurger() burger {

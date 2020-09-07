@@ -14,8 +14,8 @@ func (d *director) setBuilder(b burgerBuilder) {
 	d.builder = b
 }
 
-func (d *director) buildBurger() burger {
-	d.builder.setPatty()
-	d.builder.setTomato()
+func (d *director) buildBurger(p string, t int) burger {
+	d.builder.setPatty(p)
+	d.builder.setTomato(t)
 	return d.builder.getBurger()
 }

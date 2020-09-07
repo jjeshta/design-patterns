@@ -1,8 +1,8 @@
 package main
 
 type burgerBuilder interface {
-	setPatty()
-	setTomato()
+	setPatty(string)
+	setTomato(int)
 	getBurger() burger
 }
 
