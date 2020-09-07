@@ -13,7 +13,7 @@ func main() {
 
 	fmt.Println(x)
 
-	// director := newDirector()
+	// director := newDirector(vegBuilder)
 	// veggie := director.buildBurger()
 
 	// fmt.Printf("Veg burger patty: %s\n", veggie.patty)
