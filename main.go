@@ -1,23 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"patterns/singleton"
-)
+// What we need to implement is;
+// An interface Command
+// A class Order that implements Command interface
+// A class Waiter (invoker)
+// A class Chef (receiver)
 
 func main() {
-	//First creation
-	stateManager := singleton.GetManager()
-	if stateManager.GetState() == "off" {
-		stateManager.SetState("on")
-	}
-	fmt.Println(stateManager)
+	//Client
+	cook := chef{}
+	placeOrder := newOrder(&cook, "pasta")
+	attendant := newWaiter(&placeOrder)
+	attendant.execute()
 
-	//second creation
-	stateManager1 := singleton.GetManager()
-	if stateManager1.GetState() == "on" {
-		stateManager1.SetState("off")
-	}
-	fmt.Println(stateManager1)
+	placeOrder = newOrder(&cook, "cake")
+	attendant = newWaiter(&placeOrder)
+	attendant.execute()
 
 }
