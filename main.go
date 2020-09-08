@@ -2,22 +2,37 @@ package main
 
 import (
 	"fmt"
-	"patterns/singleton"
 )
 
 func main() {
-	//First creation
-	stateManager := singleton.GetManager()
-	if stateManager.GetState() == "off" {
-		stateManager.SetState("on")
-	}
-	fmt.Println(stateManager)
+	withoutFacade()
+	fmt.Println("---")
+	withFacade()
 
-	//second creation
-	stateManager1 := singleton.GetManager()
-	if stateManager1.GetState() == "on" {
-		stateManager1.SetState("off")
-	}
-	fmt.Println(stateManager1)
+}
 
+func withoutFacade() {
+	c := codeTwit{
+		status: "Read my greatest meme ever!",
+		url:    "https://meme-forever.com/post-meme",
+	}
+
+	g := googlize{
+		url: "https://meme-forever.com/post-meme",
+	}
+
+	r := reddiator{
+		title: "My greatest meme",
+	}
+
+	c.tweet()
+	g.share()
+	r.reddit()
+
+}
+
+func withFacade() {
+	s := shareFacade{}
+	s.newShareFacade("https://meme-forever.com/post-meme", "My greatest meme", "Read my greatest meme ever!")
+	s.share()
 }
