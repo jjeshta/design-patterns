@@ -3,7 +3,7 @@ package main
 type burgerBuilder interface {
 	setPatty(string)
 	setTomato(int)
-	getBurger() burger
+	getFood() burger
 	String() string
 }
 

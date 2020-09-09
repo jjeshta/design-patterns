@@ -23,7 +23,7 @@ func (b *vegBuilder) setTomato(t int) {
 	b.tomato = t
 }
 
-func (b *vegBuilder) getBurger() burger {
+func (b *vegBuilder) getFood() burger {
 	return burger{
 		patty:  b.patty,
 		tomato: b.tomato,

@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	//getting instance of veg and nonveg burgerbuilders
 	vegBuilder := getBuilder("veg")
 	meatBuilder := getBuilder("non-veg")
 
