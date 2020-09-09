@@ -1,5 +1,6 @@
 package main
 
+//This class is an Adaptee
 import (
 	"fmt"
 )

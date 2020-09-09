@@ -1,5 +1,6 @@
 package main
 
+//Concrete Prototype   1 implements ipayHub interface
 import (
 	"fmt"
 )

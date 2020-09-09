@@ -1,5 +1,6 @@
 package main
 
+//Client class
 type customer struct {
 }
 
