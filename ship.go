@@ -1,5 +1,6 @@
 package main
 
+// ship embedded vehicle struct and hence indirectly implements all methods from IVehicle interface
 type ship struct {
 	vehicle
 }
