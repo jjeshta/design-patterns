@@ -6,6 +6,14 @@ import (
 )
 
 func main() {
+	x := singleton.GetInstanceA()
+	y := singleton.GetInstanceA()
+	fmt.Println(x)
+	fmt.Println(y)
+
+	fmt.Println()
+	
+	fmt.Println("Using sync.Once()")
 	//First creation
 	stateManager := singleton.GetManager()
 	if stateManager.GetState() == "off" {
