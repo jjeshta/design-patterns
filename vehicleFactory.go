@@ -4,11 +4,11 @@ import (
 	"fmt"
 )
 
-func getVehicle(gunType string) (iVehicle, error) {
-	if gunType == "car" {
+func getVehicle(vehicleType string) (iVehicle, error) {
+	if vehicleType == "car" {
 		return newCar(), nil
 	}
-	if gunType == "ship" {
+	if vehicleType == "ship" {
 		return newShip(), nil
 	}
 	return nil, fmt.Errorf("Wrong vehicle type passed")
